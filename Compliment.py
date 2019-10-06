@@ -35,7 +35,7 @@ def pick():
      "Everything Would Be Better If More People Were Like You!", "You Were Cool Way Before Hipsters Were Cool.",
      "You’re Smarter Than Google And Mary Poppins Combined."]
     r=random.randint(0,9)
-    message_display(L[r])
+    return message_display(L[r])
     
 
 def main():
