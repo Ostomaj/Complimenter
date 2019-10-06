@@ -1,10 +1,13 @@
 import random
 import sys, pygame
+from pygame.locals import *
 import time
 pygame.init()
-
+info=pygame.display.Info()
 #Create the screen
-screen = pygame.display.set_mode((640,480))
+display_w=info.current_w-100
+display_h=info.current_h-100
+screen = pygame.display.set_mode((display_w,display_h),pygame.RESIZABLE)
 
 #Caption the icon
 pygame.display.set_caption("Complimenter")
@@ -12,15 +15,16 @@ icon=pygame.image.load("TU.jpg")
 pygame.display.set_icon(icon)
 
 bg = pygame.image.load("Compliment.jpg")
+bg= pygame.transform.scale(bg, (display_w,display_h))
 
 def text_objects(text,font):
     textSurface=font.render(text,True,(0,0,0))
     return textSurface, textSurface.get_rect()
 
 def message_display(text):
-    largeText = pygame.font.Font('freesansbold.ttf',18)
+    largeText = pygame.font.Font('freesansbold.ttf',30)
     TextSurf, TextRect = text_objects(text,largeText)
-    TextRect.center= ((640/2),(400/2))
+    TextRect.center= ((display_w/2),(display_h/2.5))
     screen.blit(TextSurf,TextRect)
     
 
@@ -34,25 +38,28 @@ def pick():
     message_display(L[r])
     
 
-white = [255, 255, 255]
 def main():
     p=1
     clicks=0
     while p==1:
         mouse=pygame.mouse.get_pos()
         click = pygame.mouse.get_pressed()
-        pygame.display.update()
-        if 537>mouse[0]>113 and 387>mouse[1]>310 and click[0] == 1 != None:
-           message_display("GENERATING...")
+        if clicks == 0:
+            screen.blit(bg,(0,0))
+            pygame.display.update()
+        else:
+            pygame.display.update()
+
+        if 1065>mouse[0]>222 and 541>mouse[1]>432 and click[0] == 1 != None:
            screen.blit(bg,(0,0))
            time.sleep(0.2)
            pick()
            clicks+=1
            print(clicks)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-        pygame.display.update()
-
+            pygame.display.update()
 if __name__=='__main__':
     main()
