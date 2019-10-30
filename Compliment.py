@@ -23,13 +23,13 @@ def text_objects(text,font):
     return textSurface, textSurface.get_rect()
 
 def message_display(text):
-    largeText = pygame.font.Font('freesansbold.ttf',38)
+    largeText = pygame.font.Font('freesansbold.ttf',40)
     TextSurf, TextRect = text_objects(text,largeText)
     TextRect.center= ((display_w/1.8),(display_h/2.3))
     screen.blit(TextSurf,TextRect)
 
 def generating_text(text):
-    largeText = pygame.font.Font('freesansbold.ttf',85)
+    largeText = pygame.font.Font('freesansbold.ttf',90)
     TextSurf, TextRect = text_objects(text,largeText)
     TextRect.center= ((display_w/1.8),(display_h/2.3))
     screen.blit(TextSurf,TextRect)    
@@ -38,13 +38,15 @@ def smiley():
     x=display_w/2.1
     y=display_h/3.5
     screen.blit(smile, (x,y))
-
+#this is the list of compliments
+#kind of a mess honestly
+#but so is the rest of this file
 def pick():
     L = ["You Are The Most Perfect You There Is", "You Should Be Proud Of Yourself",
      "You are Really Something Special","You are More Fun Than A Ball Pit Filled With Candy",
      "You are More Fun Than Bubble Wrap","You Are Making A Difference","You’re A Gift To Those Around You",
      "Everything Would Be Better If More People Were Like You!", "You Were Cool Way Before Hipsters Were Cool.",
-     "You are Smarter Than Google And Mary Poppins Combined."]
+     "You are Smarter Than Google And Mary Poppins Combined.","You are More Awesome Than This Program!"]
     r=random.randint(0,9)
     message_display(L[r])
     
