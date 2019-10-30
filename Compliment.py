@@ -29,7 +29,7 @@ def message_display(text):
     screen.blit(TextSurf,TextRect)
 
 def generating_text(text):
-    largeText = pygame.font.Font('freesansbold.ttf',85)
+    largeText = pygame.font.Font('freesansbold.ttf',90)
     TextSurf, TextRect = text_objects(text,largeText)
     TextRect.center= ((display_w/1.8),(display_h/2.3))
     screen.blit(TextSurf,TextRect)    
