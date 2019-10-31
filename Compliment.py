@@ -90,6 +90,12 @@ def main():
                 generating_text("Generating Compliment.")
                 time.sleep(1)
                 pygame.display.update()
+                
+            if time.time()-start<4.5:
+                screen.blit(bg,(0,0))
+                generating_text("Finalizing Compliment...")
+                time.sleep(1)
+                pygame.display.update()
 
             if time.time()-start<5:
                 screen.blit(bg,(0,0))
