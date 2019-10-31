@@ -39,8 +39,7 @@ def smiley():
     y=display_h/3.5
     screen.blit(smile, (x,y))
 #this is the list of compliments
-#kind of a mess honestly
-#but so is the rest of this file
+
 def pick():
     L = ["You Are The Most Perfect You There Is", "You Should Be Proud Of Yourself",
      "You are Really Something Special","You are More Fun Than A Ball Pit Filled With Candy",
